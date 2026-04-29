@@ -258,7 +258,7 @@ export default function Home() {
         </div>
 
         <div className="container">
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-[1.5fr_0.5fr] gap-8 lg:gap-12 items-center">
             {/* Left column */}
             <motion.div
               initial="hidden"
