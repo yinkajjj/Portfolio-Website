@@ -30,16 +30,13 @@ import {
 } from "lucide-react";
 
 // --- Constants ---
-const PORTRAIT_FORMAL = "/images/portrait-casual.png";
-const PORTRAIT_CASUAL = "/images/portrait-formal.png";
-
-const HERO_BG = PORTRAIT_FORMAL;
-const PROJECT_AMETHYST = PORTRAIT_CASUAL;
-const PROJECT_PROMPTWISE_HOME = PORTRAIT_FORMAL;
-const PROJECT_PROMPTWISE_BROWSE = PORTRAIT_CASUAL;
-const JOEL_HERO_PHOTO = PORTRAIT_FORMAL;
-const JOEL_DESK_PHOTO = PORTRAIT_CASUAL;
-const SKILLS_PATTERN = PORTRAIT_CASUAL;
+const HERO_BG = "/images/photo1.png";
+const PROJECT_AMETHYST = "/images/photo2.png";
+const PROJECT_PROMPTWISE_HOME = "/images/photo3.png";
+const PROJECT_PROMPTWISE_BROWSE = "/images/photo4.png";
+const JOEL_HERO_PHOTO = "/images/photo1.png";
+const JOEL_DESK_PHOTO = "/images/photo2.png";
+const SKILLS_PATTERN = "/images/photo3.png";
 
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
@@ -255,9 +252,9 @@ export default function Home() {
           <img
             src={HERO_BG}
             alt=""
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20 blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
         </div>
 
         <div className="container">
@@ -348,8 +345,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" as const }}
               className="hidden lg:block"
             >
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden border border-stone-200/60 shadow-xl">
+              <div className="relative max-w-xs mx-auto">
+                <div className="rounded-2xl overflow-hidden border-2 border-stone-300/80 shadow-2xl">
                   <img
                     src={JOEL_HERO_PHOTO}
                     alt="Joel Onarinde"
@@ -357,12 +354,12 @@ export default function Home() {
                   />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 bg-white border border-stone-200 rounded-xl px-5 py-3 shadow-lg">
+                <div className="absolute -bottom-4 -left-4 bg-white border-2 border-stone-300 rounded-xl px-5 py-3 shadow-xl">
                   <div className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-1">Focus</div>
                   <div className="text-sm font-medium text-stone-800">Web Dev &middot; IT Admin &middot; AI</div>
                 </div>
                 {/* Small secondary photo */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-xl overflow-hidden border-2 border-white shadow-lg">
+                <div className="absolute -top-4 -right-4 w-20 h-20 rounded-xl overflow-hidden border-2 border-stone-300 shadow-xl">
                   <img
                     src={JOEL_DESK_PHOTO}
                     alt="Joel at work"
@@ -516,15 +513,15 @@ export default function Home() {
               </div>
 
               {/* Screenshots — stacked with overlap */}
-              <div className="relative bg-stone-100 p-6 md:p-8 flex flex-col gap-4 min-h-[400px] justify-center">
-                <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200/40">
+              <div className="relative bg-stone-100 p-6 md:p-8 flex flex-col gap-4 min-h-[400px] justify-center items-center">
+                <div className="rounded-xl overflow-hidden shadow-xl border-2 border-stone-300/60 max-w-md w-full">
                   <img
                     src={PROJECT_PROMPTWISE_HOME}
                     alt="Prompt Wise home page — Ideas on tap for any topic"
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg border border-stone-200/40">
+                <div className="rounded-xl overflow-hidden shadow-xl border-2 border-stone-300/60 max-w-md w-full">
                   <img
                     src={PROJECT_PROMPTWISE_BROWSE}
                     alt="Prompt Wise browse page — Browse Prompts catalog"
@@ -558,11 +555,11 @@ export default function Home() {
               variants={fadeUp}
               className="group rounded-2xl border border-stone-200/60 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden bg-stone-100">
                 <img
                   src={PROJECT_AMETHYST}
                   alt="Amethyst Care & Support Group website"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
