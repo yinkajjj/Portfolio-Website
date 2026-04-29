@@ -512,15 +512,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Screenshots — stacked with overlap */}
-              <div className="relative bg-stone-100 p-6 md:p-8 flex flex-col gap-4 min-h-[400px] justify-center items-center">
-                <div className="rounded-xl overflow-hidden shadow-xl border-2 border-stone-300/60 max-w-md w-full">
-                  <img
-                    src={PROJECT_PROMPTWISE_HOME}
-                    alt="Prompt Wise home page — Ideas on tap for any topic"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
+              {/* Screenshot */}
+              <div className="relative bg-stone-100 p-6 md:p-8 flex justify-center items-center">
                 <div className="rounded-xl overflow-hidden shadow-xl border-2 border-stone-300/60 max-w-md w-full">
                   <img
                     src={PROJECT_PROMPTWISE_BROWSE}
