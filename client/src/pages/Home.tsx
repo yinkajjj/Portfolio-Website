@@ -42,12 +42,70 @@ const JOEL_DESK_PHOTO = PORTRAIT_CASUAL;
 const SKILLS_PATTERN = PORTRAIT_CASUAL;
 
 const NAV_ITEMS = [
-  { label: "Story", href: "#about" },
-  { label: "Case Studies", href: "#projects" },
-  { label: "Build Log", href: "#github" },
-  { label: "Expertise", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  {
+    label: "Story",
+    href: "#about",
+    tabClass: "text-[#2f4f9f] hover:text-[#1e3775] hover:bg-[#e6eeff]",
+  },
+  {
+    label: "Case Studies",
+    href: "#projects",
+    tabClass: "text-[#0f766e] hover:text-[#0b5d57] hover:bg-[#dff8f4]",
+  },
+  {
+    label: "Build Log",
+    href: "#github",
+    tabClass: "text-[#9a3412] hover:text-[#7c2d12] hover:bg-[#ffeddc]",
+  },
+  {
+    label: "Expertise",
+    href: "#skills",
+    tabClass: "text-[#7e22ce] hover:text-[#6b21a8] hover:bg-[#f3e8ff]",
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+    tabClass: "text-[#be123c] hover:text-[#9f1239] hover:bg-[#ffe4ea]",
+  },
 ];
+
+const SECTION_TONES: Record<string, { number: string; line: string; label: string }> = {
+  Story: {
+    number: "text-[#2f4f9f]",
+    line: "bg-[#bed0ff]",
+    label: "text-[#2f4f9f] bg-[#e6eeff] border border-[#c9d8ff]",
+  },
+  Timeline: {
+    number: "text-[#0f766e]",
+    line: "bg-[#99e7da]",
+    label: "text-[#0f766e] bg-[#dff8f4] border border-[#b8efe6]",
+  },
+  "Case Study": {
+    number: "text-[#9a3412]",
+    line: "bg-[#ffcba8]",
+    label: "text-[#9a3412] bg-[#ffeddc] border border-[#ffd7bd]",
+  },
+  "Client Outcomes": {
+    number: "text-[#7e22ce]",
+    line: "bg-[#dfb9ff]",
+    label: "text-[#7e22ce] bg-[#f3e8ff] border border-[#e9d5ff]",
+  },
+  "Build Log": {
+    number: "text-[#1d4ed8]",
+    line: "bg-[#b6d0ff]",
+    label: "text-[#1d4ed8] bg-[#e8f0ff] border border-[#ccddff]",
+  },
+  Expertise: {
+    number: "text-[#a21caf]",
+    line: "bg-[#edb8ff]",
+    label: "text-[#a21caf] bg-[#fae8ff] border border-[#f5d0fe]",
+  },
+  Contact: {
+    number: "text-[#be123c]",
+    line: "bg-[#ffc0d0]",
+    label: "text-[#be123c] bg-[#ffe4ea] border border-[#ffc8d6]",
+  },
+};
 
 const SKILLS = [
   { name: "HTML & CSS", desc: "Semantic layouts & modern styling", icon: Code2 },
@@ -124,11 +182,19 @@ function Section({ children, id, className = "" }: { children: React.ReactNode; 
 }
 
 function SectionLabel({ number, label }: { number: string; label: string }) {
+  const tone = SECTION_TONES[label] ?? {
+    number: "text-sage-500",
+    line: "bg-stone-300",
+    label: "text-stone-500 border border-stone-200 bg-stone-50",
+  };
+
   return (
     <motion.div variants={fadeUp} className="flex items-center gap-4 mb-8">
-      <span className="font-mono text-sm tracking-widest text-sage-500">{number}</span>
-      <div className="h-px w-12 bg-stone-300" />
-      <span className="font-mono text-sm tracking-widest uppercase text-stone-500">{label}</span>
+      <span className={`font-mono text-sm tracking-widest ${tone.number}`}>{number}</span>
+      <div className={`h-px w-12 ${tone.line}`} />
+      <span className={`font-mono text-sm tracking-widest uppercase px-3 py-1 rounded-full ${tone.label}`}>
+        {label}
+      </span>
     </motion.div>
   );
 }
@@ -240,7 +306,7 @@ export default function Home() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-sm text-stone-600 hover:text-stone-900 transition-colors rounded-md hover:bg-stone-100/60"
+                className={`px-4 py-2 text-sm transition-colors rounded-md ${item.tabClass}`}
               >
                 {item.label}
               </a>
