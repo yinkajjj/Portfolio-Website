@@ -1075,9 +1075,6 @@ export default function Home() {
               <Mail className="w-4 h-4" />
             </a>
           </div>
-          <span className="text-xs text-stone-400">
-            Built to showcase creativity, technical value & growth.
-          </span>
         </div>
       </footer>
     </div>
